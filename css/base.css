@@ -1,12 +1,12 @@
 :root {
-  --colorfull: #ff5a36;
-  --schrift-heller: #7589a2;
+    --colorfull: #ff5a36;
+    --schrift-heller: #7589a2;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 body,
@@ -14,48 +14,49 @@ h1,
 h2,
 h3,
 p {
-  color: #193251;
-  font-family: Open Sans;
-  font-style: normal;
-  font-weight: normal;
-  margin: 0;
+    color: #193251;
+    font-family: Open Sans, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 18px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 18px;
 }
 
 .body__large {
-  font-size: 16px;
-  font-weight: bold;
-  line-height: 24px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 24px;
 }
 
 .body__small {
-  font-size: 14px;
-  line-height: 20px;
+    font-size: 14px;
+    line-height: 20px;
 }
 
 .headline__uppercase {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 18px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 18px;
 }
 
 .headline {
-  font-size: 14px;
-  font-weight: 600;
-  line-height: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16px;
 }
 
 .label {
-  font-size: 12px;
-  line-height: 16px;
+    color: var(--schrift-heller);
+    font-size: 12px;
+    line-height: 16px;
 }
