@@ -15,7 +15,7 @@ h2,
 h3,
 p {
   color: #193251;
-  font-family: Open Sans;
+  font-family: "Open Sans";
   font-style: normal;
   font-weight: normal;
   margin: 0;
@@ -34,13 +34,14 @@ body {
 
 .body__large {
   font-size: 16px;
-  font-weight: bold;
   line-height: 24px;
+  font-weight: 700;
 }
 
 .body__small {
   font-size: 14px;
   line-height: 20px;
+  font-weight: 400;
 }
 
 .headline__uppercase {
@@ -51,11 +52,17 @@ body {
 
 .headline {
   font-size: 14px;
-  font-weight: 600;
   line-height: 16px;
 }
 
 .label {
   font-size: 12px;
   line-height: 16px;
+}
+
+main {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+  margin-left: 30px;
+  margin-right: 30px;
 }

@@ -1,0 +1,28 @@
+footer {
+  background-color: white;
+  z-index: 800;
+  bottom: 0;
+  left: 0;
+  position: fixed;
+  right: 0;
+  height: 80px;
+  z-index: 999;
+}
+
+.footer {
+  border-radius: 10px;
+  bottom: 0;
+  box-shadow: 0px 2px 11px rgba(25, 50, 81, 0.2);
+  left: 0;
+  margin: 20px;
+  position: fixed;
+  right: 0;
+  z-index: 999;
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-around;
+  list-style-type: none;
+  padding: 0;
+}
