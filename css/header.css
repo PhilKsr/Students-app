@@ -1,0 +1,20 @@
+.header {
+    background-image: url("../background_shape_1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    height: 6rem;
+    left: 0;
+    padding-top: 20px;
+    position: fixed;
+    right: 0;
+    text-align: center;
+    top: 0;
+    z-index: 999;
+}
+
+.header__label {
+    color: #7589a2;
+    margin-top: 4px;
+}

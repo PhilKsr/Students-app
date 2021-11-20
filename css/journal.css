@@ -47,3 +47,20 @@
 .main__journal>.headline {
     margin-top: 50px;
 }
+
+.main__journal textarea {
+    border: 1px solid #E0E4E8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+}
+
+.btn__group {
+    display: flex;
+}
+
+.btn__cancel {
+    background: none;
+    color: #193251;
+}
