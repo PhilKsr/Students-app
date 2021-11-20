@@ -1,0 +1,32 @@
+.headline-cbt {
+  margin-bottom: 9px;
+  margin-top: 34px;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+li {
+  color: var(--schrift-heller);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  border: #e0e4e8 solid 1px;
+  border-bottom: none;
+  width: 315px;
+  height: 58px;
+  font-family: open;
+}
+.list-first {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+.list-last {
+  border-bottom-right-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-bottom: #e0e4e8 solid 1px;
+}
