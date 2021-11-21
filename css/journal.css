@@ -1,0 +1,67 @@
+.main__journal {
+    margin: 50px 30px;
+    /* width: 315px; */
+}
+
+.star__rating-dark {
+    background: #193251;
+}
+
+.main__journal>div {
+    margin: 20px;
+}
+
+.main__journal .label {
+    display: block;
+    margin-bottom: 7px;
+}
+
+.main__journal .square div {
+    display: inline-block;
+    background: #193251;
+    border-radius: 4px;
+    height: 22px;
+    width: 22px;
+}
+
+.main__journal .square div.inactive {
+    background: #E0E4E8;
+}
+
+.btn__rate-today {
+    background: var(--colorfull);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    display: inline-block;
+    height: 48px;
+    margin: 5px;
+    padding: 12px 20px;
+    width: 198px;
+}
+
+.main__journal>div.btn__center {
+    text-align: center;
+}
+
+.main__journal>.headline {
+    margin-top: 50px;
+}
+
+.main__journal textarea {
+    border: 1px solid #E0E4E8;
+    border-radius: 4px;
+    box-sizing: border-box;
+    padding: 15px;
+    width: 100%;
+}
+
+.btn__group {
+    display: flex;
+    justify-content: center;
+}
+
+.btn__cancel {
+    background: none;
+    color: #193251;
+}

@@ -1,65 +1,65 @@
 section h2 {
-  margin-top: 26px;
-  margin-bottom: 8px;
+    margin-top: 26px;
+    margin-bottom: 8px;
 }
 
 .energy__diagram {
-  width: 100%;
+    width: 100%;
 }
 
 .energy__diagram-description {
-  list-style-type: none;
-  display: flex;
-  flex-direction: row;
-  justify-content: end;
-  margin-top: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin-top: 0;
 }
 
 .energy__diagram-description li:nth-child(1) {
-  padding: 1px 10px;
-  margin: 10px;
-  background-color: #193251;
-  color: white;
-  border-radius: 3px;
+    padding: 1px 10px;
+    margin: 10px;
+    background-color: #193251;
+    color: white;
+    border-radius: 3px;
 }
 
 .energy__diagram-description li:nth-child(2) {
-  padding: 1px 10px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-  background-color: #ffded7;
-  color: #ff5a36;
-  border-radius: 3px;
+    padding: 1px 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: #ffded7;
+    color: #ff5a36;
+    border-radius: 3px;
 }
 
 .energy__bar {
-  list-style-type: none;
-  text-align: center;
-  color: white;
-  padding: 0%;
+    list-style-type: none;
+    text-align: center;
+    color: white;
+    padding: 0%;
 }
 
 .energy__bar li {
-  padding: 12px;
-  margin-top: 8px;
+    padding: 12px;
+    margin-top: 8px;
 }
 
 .energy__bar li:nth-child(1) {
-  background-color: #ff5a36;
-  border-radius: 4px;
+    background-color: #ff5a36;
+    border-radius: 4px;
 }
 
 .energy__bar li:nth-child(2) {
-  background-color: #ff9c86;
-  border-radius: 4px;
+    background-color: #ff9c86;
+    border-radius: 4px;
 }
 
 .energy__bar li:nth-child(3) {
-  background-color: #ffbdaf;
-  border-radius: 4px;
+    background-color: #ffbdaf;
+    border-radius: 4px;
 }
 
 .energy__bar li:nth-child(4) {
-  background-color: #ffded7;
-  border-radius: 4px;
+    background-color: #ffded7;
+    border-radius: 4px;
 }
