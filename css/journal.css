@@ -58,6 +58,7 @@
 
 .btn__group {
     display: flex;
+    justify-content: center;
 }
 
 .btn__cancel {
