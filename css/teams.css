@@ -3,13 +3,13 @@
   margin-top: 34px;
 }
 
-ul {
+.teams-list ul {
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
 }
-li {
+.teams-list li {
   color: var(--schrift-heller);
   display: flex;
   justify-content: center;
