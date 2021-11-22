@@ -7,10 +7,6 @@
   background: #193251;
 }
 
-.main__journal > div {
-  margin: 20px;
-}
-
 .main__journal .label {
   display: block;
   margin-bottom: 7px;
