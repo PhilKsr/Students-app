@@ -19,27 +19,12 @@
   border-bottom: none;
   height: 58px;
 }
-.list-first {
+.list-item:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
-  color: var(--schrift-heller);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  border: #e0e4e8 solid 1px;
-  border-bottom: none;
-  height: 58px;
 }
-.list-last {
+.list-item:last-child {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   border-bottom: #e0e4e8 solid 1px;
-  color: var(--schrift-heller);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  list-style: none;
-  border: #e0e4e8 solid 1px;
-  height: 58px;
 }

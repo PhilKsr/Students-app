@@ -3,8 +3,8 @@ let teams = [
     'Team 2'
 ]
 let members = [
-    ['bla', 'bla1'],
-    ['bla', 'bla1']
+    ['Peter Lustig', 'Kevin home alone', 'Benjamin Blümchen', 'Max Muster', 'Dschingis Khan'],
+    ['Axel Schweiß', 'Jeremy Pascal', 'Pipi Langstrumpf', 'Bibi Blocksberg', 'Jim Knopf']
 ]
 
 teams.forEach((team, index) => {
@@ -19,29 +19,20 @@ teams.forEach((team, index) => {
     const ul = document.createElement('ul')
     ul.classList.add('teams-list__one')
 
-    const li = document.createElement('li')
-    li.classList.add('list-item')
-    li.innerText = 'Team X'
+    const teamMembers = members[index]
 
+    teamMembers.forEach((item, index) => {
+
+        const li = document.createElement('li')
+        li.classList.add('list-item')
+        li.innerText = item
+        ul.appendChild(li)
+    })
+    
     main.appendChild(section)
     section.appendChild(h2)
     section.appendChild(ul)
-    ul.appendChild(li)
 
-    console.log(section)
 });
 
-
-const list = ['one', 'two', 'three'];
-
-
-function printer(number) {
-    console.log(number);
-}
-
-list.forEach(printer);
-
-list.forEach((number) => {
-    console.log(number);
-});
 
