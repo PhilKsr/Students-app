@@ -14,7 +14,7 @@ const teams = [
 const main = document.querySelector('main')
 
 //console.log(teams[0][0][0]) //Peter Lustig
-console.log(teams[0][1]) // Team 1
+//console.log(teams[0][1]) // Team 1
 
 /*teams[0][1].forEach((name) => {
     let listElement = document.createElement('li')
