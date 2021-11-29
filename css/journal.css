@@ -3,25 +3,31 @@
   /* width: 315px; */
 }
 
-.star__rating-dark {
-  background: #193251;
-}
-
 .main__journal .label {
   display: block;
   margin-bottom: 7px;
+  margin-top: 7px;
 }
 
-.main__journal .square div {
-  display: inline-block;
-  background: #193251;
-  border-radius: 4px;
-  height: 22px;
-  width: 22px;
+.block {
+  display: flex;
+  justify-content: space-between;
 }
 
-.main__journal .square div.inactive {
-  background: #e0e4e8;
+.star__inactive--fix {
+  fill: #e0e4e8;
+}
+
+.star__active--fix {
+  fill: #193251;
+}
+
+.block__inactive--fix {
+  fill: #e0e4e8;
+}
+
+.block__active--fix {
+  fill: #193251;
 }
 
 .btn__rate-today {
@@ -60,4 +66,20 @@
 .btn__cancel {
   background: none;
   color: #193251;
+}
+
+.star__inactive {
+  fill: #e0e4e8;
+}
+
+.star__active {
+  fill: #193251;
+}
+
+.block__inactive {
+  fill: #e0e4e8;
+}
+
+.block__active {
+  fill: #193251;
 }

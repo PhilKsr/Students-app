@@ -16,3 +16,15 @@ buddiesGroups.forEach((group, index) => {
     })
     main.appendChild(ul)
 })
+
+// Get date label
+const myDate = document.querySelector('.header__label')
+
+// Get date components
+const d = new Date();
+const date = d.getDate();
+const month = d.getMonth() + 1; // getMonth() returns month from 0-11 not 1-12
+const year = d.getFullYear();
+
+// insert todays date
+myDate.innerText = `Date - ${date}.${month}.${year}`;
