@@ -3,9 +3,9 @@
   /* width: 315px; */
 }
 
-.star__rating-dark {
+/*.star__rating-dark {
   background: #193251;
-}
+}*/
 
 .main__journal .label {
   display: block;
@@ -61,3 +61,12 @@
   background: none;
   color: #193251;
 }
+.star-path {
+  xfill: #e0e4e8;
+  background: darkgoldenrod;
+}
+
+/*.star-path-full {
+  display: none;
+  fill:#193251
+}*/
