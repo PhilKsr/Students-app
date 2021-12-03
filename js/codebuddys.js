@@ -1,18 +1,25 @@
-const buddiesGroups = [
-    ['Sudanka Bakalowits', 'Yasaman Foroutan'],
-    ['Angela Longoria', 'Maria Trofimova'],
-    ['Benedita Tavares', 'Elise Beverley'],
-    ['Evelyn Allen', 'Rafeeda El Nouri'],
-    ['Sudanka Bakalowits', 'Yasaman Foroutan'],
-]
+fetch('https://muc-student-companion-api.vercel.app/api/buddies')
+    .then((response) => response.json())
+    .then((data) => {
 
-buddiesGroups.forEach((group, index) => {
-    const main = document.querySelector('main')
-    const ul = document.createElement('ul')
-    group.forEach((name, index) => {
-        const li = document.createElement('li')
-        li.innerText = name
-        ul.appendChild(li)
+        console.log(data)
+
+        data.forEach((buddies, index) => {
+            
+            const main = document.querySelector('main')
+            const ul = document.createElement('ul')
+            buddies.forEach((name, index) => {
+                const li = document.createElement('li')
+                li.innerText = name
+                ul.appendChild(li)
+            })
+            main.appendChild(ul)
+        })
+
     })
-    main.appendChild(ul)
-})
+    
+    // Datum
+
+    // const day = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    // const today = new Date()
+    // const date = day[today.getDay()] + '' + today.getDate() + '.' + (today)

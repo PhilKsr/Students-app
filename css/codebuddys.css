@@ -36,8 +36,7 @@ main>ul>li::after {
   color: #193251;
   bottom: -15px;
   z-index: 99;
-  left: 50%;
-  margin-left: -10px;
+  left: calc(50% - 10px);
   font-size: 30px;
   line-height: 100%;
 }
