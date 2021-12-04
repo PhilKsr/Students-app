@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="./js/journal.js" defer></script>
   </head>
 
   <body>
@@ -19,14 +20,13 @@
     </header>
 
     <main>
+      <div class="btn__center">
+        <button class="btn__rate-today body__large">
+          Rate Today <i class="fa-regular fa-star"></i>
+        </button>
+      </div>
       <section class="main__journal">
-        <div class="btn__center">
-          <button class="btn__rate-today body__large">
-            Rate Today <i class="fa-regular fa-star"></i>
-          </button>
-        </div>
-        <h2 class="headline">Yesterday</h2>
-        <div>
+          <h2 class="headline">Yesterday</h2>
           <span class="label">Rating:</span>
           <div class="stars">
             <div></div>
@@ -35,11 +35,9 @@
             <div class="inactive"></div>
             <div class="inactive"></div>
           </div>
-        </div>
-
-        <div>
+    
           <span class="label">Comprehension:</span>
-          <div class="square">
+          <div class="square total-active-8">
             <div></div>
             <div></div>
             <div></div>
@@ -51,21 +49,16 @@
             <div class="inactive"></div>
             <div class="inactive"></div>
           </div>
-        </div>
-
-        <div>
+        
           <span class="label">Motto:</span>
           <p class="body__large">"Thats life in the city"</p>
-        </div>
-
-        <div>
+        
           <span class="label">Notes:</span>
           <p class="body__small">
             Si sine causa? quae fuerit causa, mox videro; interea hoc tenebo, si
             mihi. Et quidem se repellere, idque instituit docere sic omne
             animal, simul atque.
           </p>
-        </div>
       </section>
 
       <section class="main__journal">
