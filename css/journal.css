@@ -1,15 +1,10 @@
-.xmain__journal {
-  margin: 50px 30px;
-  /* width: 315px; */
-}
-
 .main__journal .label {
   display: block;
   margin-bottom: 7px;
   margin-top: 7px;
 }
 
-.block {
+.block .block_rate {
   display: flex;
   justify-content: space-between;
 }
@@ -42,12 +37,26 @@
   width: 198px;
 }
 
-.main__journal > div.btn__center {
-  text-align: center;
+.btn__save {
+  background: var(--colorfull);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  display: inline-block;
+  height: 48px;
+  margin: 5px;
+  padding: 12px 20px;
+  width: 198px;
 }
 
-.main__journal > .headline {
+.btn__center {
+  text-align: center;
   margin-top: 50px;
+}
+
+.main__journal,
+.headline {
+  margin-top: 40px;
 }
 
 .main__journal textarea {
@@ -64,8 +73,15 @@
 }
 
 .btn__cancel {
-  background: none;
+  background: #e0e4e8;
   color: #193251;
+  border: none;
+  border-radius: 4px;
+  display: inline-block;
+  height: 48px;
+  margin: 5px;
+  padding: 12px 20px;
+  width: 198px;
 }
 
 .star__inactive {

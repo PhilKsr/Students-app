@@ -1,38 +1,52 @@
-let teams = [
-    'Team 1',
-    'Team 2'
-]
-let members = [
-    ['Peter Lustig', 'Kevin home alone', 'Benjamin Blümchen', 'Max Muster', 'Dschingis Khan'],
-    ['Axel Schweiß', 'Jeremy Pascal', 'Pipi Langstrumpf', 'Bibi Blocksberg', 'Jim Knopf']
-]
+fetch("https://muc-student-companion-api.vercel.app/api/teams")
+  .then((response) => response.json())
+  .then((data) => {
+    const teamList = data;
+    teamList.forEach((team, index) => {
+      create(team, index);
+    });
+    saveToLocal("Team-List", teamList);
+  })
+  .catch(() => {
+    const teamList = loadFromLocal("Team-List");
+    teamList.forEach((team, index) => {
+      create(team, index);
+    });
+  });
 
-teams.forEach((team, index) => {
+// SAVE TO LOCAL STORAGE
+function saveToLocal(name, data) {
+  localStorage.setItem(name, JSON.stringify(data));
+}
 
-    const main = document.querySelector('main')
-    const section = document.createElement('section')
-    section.classList.add('teams-list')
+// GET FROM LOCAL STORAGE
+function loadFromLocal(name) {
+  const itemsFromLocal = localStorage.getItem(name)
+    ? JSON.parse(localStorage.getItem(name))
+    : [];
+  return itemsFromLocal;
+}
 
-    const h2 = document.createElement('h2')
-    h2.classList.add('headline', 'headline-cbt')
-    h2.innerText = team
-    const ul = document.createElement('ul')
-    ul.classList.add('teams-list__one')
+// Function create elements
+function create(team, index) {
+  const main = document.querySelector("main");
+  const section = document.createElement("section");
+  section.classList.add("teams-list");
 
-    const teamMembers = members[index]
+  const h2 = document.createElement("h2");
+  h2.classList.add("headline", "headline-cbt");
+  h2.innerText = "Team " + (index + 1);
+  const ul = document.createElement("ul");
+  ul.classList.add("teams-list__one");
 
-    teamMembers.forEach((item, index) => {
+  team.forEach((item) => {
+    const li = document.createElement("li");
+    li.classList.add("list-item");
+    li.innerText = item;
+    ul.appendChild(li);
+  });
 
-        const li = document.createElement('li')
-        li.classList.add('list-item')
-        li.innerText = item
-        ul.appendChild(li)
-    })
-    
-    main.appendChild(section)
-    section.appendChild(h2)
-    section.appendChild(ul)
-
-});
-
-
+  main.appendChild(section);
+  section.appendChild(h2);
+  section.appendChild(ul);
+}

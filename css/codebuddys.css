@@ -1,4 +1,4 @@
-main > ul {
+.buddiesList > ul {
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -7,7 +7,7 @@ main > ul {
   margin-top: 21px;
 }
 
-main > ul > li {
+.buddiesList > ul > li {
   color: var(--schrift-heller);
   display: flex;
   justify-content: center;
@@ -19,17 +19,17 @@ main > ul > li {
   position: relative;
 }
 
-main > ul > li:first-child {
+.buddiesList > ul > li:first-child {
   border-top-left-radius: 6px;
   border-top-right-radius: 6px;
 }
-main > ul > li:last-child {
+.buddiesList > ul > li:last-child {
   border-bottom-right-radius: 6px;
   border-bottom-left-radius: 6px;
   border-bottom: #e0e4e8 solid 1px;
 }
 
-main > ul > li::after {
+.buddiesList > ul > li::after {
   content: "+";
   display: block;
   position: absolute;
@@ -42,7 +42,7 @@ main > ul > li::after {
   line-height: 100%;
 }
 
-main > ul > li:last-child::after {
+.buddiesList > ul > li:last-child::after {
   content: none;
 }
 
