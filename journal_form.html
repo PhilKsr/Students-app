@@ -10,6 +10,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="css/styles.css" />
+    <script src="journal_form.js" defer></script>
   </head>
 
   <body>
@@ -114,22 +115,22 @@
             <div class="inactive"></div>
           </div>
         </div>
-
+<form>
         <div>
           <span class="label">Motto:</span>
-          <textarea name="" id="" cols="30" rows="1"></textarea>
+          <input type="text" name="motto" id="" cols="30" rows="1"></input>
         </div>
 
         <div>
           <span class="label">Notes:</span>
-          <textarea name="" id="" cols="30" rows="5"></textarea>
+          <input type="text" name="notes" id="" cols="30" rows="5"></input>
         </div>
 
         <div class="btn__group">
-          <button class="btn__rate-today body__large btn__cancel">
+          <button type="reset" class="btn__rate-today body__large btn__cancel">
             Cancel
           </button>
-          <button class="btn__rate-today body__large">
+          <button type="submit" class="btn__rate-today body__large">
             Save
             <svg
               width="16"
@@ -147,6 +148,7 @@
             </svg>
           </button>
         </div>
+      </form>
       </section>
     </main>
 

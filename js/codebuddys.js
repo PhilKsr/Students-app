@@ -1,23 +1,46 @@
-const buddiesGroups = [
+/*const buddiesGroupsErsatz = [
     ['Sudanka Bakalowits', 'Yasaman Foroutan'],
     ['Angela Longoria', 'Maria Trofimova'],
     ['Benedita Tavares', 'Elise Beverley'],
     ['Evelyn Allen', 'Rafeeda El Nouri'],
     ['Sudanka Bakalowits', 'Yasaman Foroutan'],
-]
+]*/
+//function saveErsatz(name, data) {
+  //  localStorage.setItem('_buddiesFake', JSON.stringify(buddiesGroupsErsatz))
+//}
+const buddiesErsatz = JSON.parse(localStorage.getItem('_buddiesFake'))
 
-buddiesGroups.forEach((group, index) => {
-    const main = document.querySelector('main')
-    const ul = document.createElement('ul')
-    group.forEach((name, index) => {
-        const li = document.createElement('li')
-        li.innerText = name
-        ul.appendChild(li)
-    })
-    main.appendChild(ul)
+function renderBuddies (team){
+    team.forEach((group, index) => {
+       const main = document.querySelector('main')
+       const ul = document.createElement('ul')
+       main.appendChild(ul)
+       
+       group.forEach((name, index) => {
+           const li = document.createElement('li')
+           li.innerText = name
+           ul.appendChild(li)
+       })
+       
+   }) 
+ }
+
+fetch ('https://muc-student-companion-api.vercel.app/api/buddies')
+    .then((data) => data.json())
+    .then((response) => {
+        const buddiesGroups = response
+
+        renderBuddies(buddiesGroups)
+
 })
+.catch((error) => renderBuddies(buddiesErsatz))
 
-// Get date label
+
+
+
+
+
+    // Get date label
 const myDate = document.querySelector('.header__label')
 
 // Get date components
