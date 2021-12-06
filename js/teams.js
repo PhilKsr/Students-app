@@ -7,6 +7,7 @@ fetch("https://muc-student-companion-api.vercel.app/api/teams")
     });
     saveToLocal("Team-List", teamList);
   })
+  // CATCH FROM LOCAL STORAGE
   .catch(() => {
     const teamList = loadFromLocal("Team-List");
     teamList.forEach((team, index) => {
@@ -14,12 +15,12 @@ fetch("https://muc-student-companion-api.vercel.app/api/teams")
     });
   });
 
-// SAVE TO LOCAL STORAGE
+// FUNCTION SAVE TO LOCAL STORAGE
 function saveToLocal(name, data) {
   localStorage.setItem(name, JSON.stringify(data));
 }
 
-// GET FROM LOCAL STORAGE
+// FUNCTION GET FROM LOCAL STORAGE
 function loadFromLocal(name) {
   const itemsFromLocal = localStorage.getItem(name)
     ? JSON.parse(localStorage.getItem(name))
@@ -27,7 +28,7 @@ function loadFromLocal(name) {
   return itemsFromLocal;
 }
 
-// Function create elements
+// FUNCTION TO CREATE ALL ELEMENTS WITH CLASS
 function create(team, index) {
   const main = document.querySelector("main");
   const section = document.createElement("section");

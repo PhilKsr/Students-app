@@ -99,3 +99,12 @@
 .block__active {
   fill: #193251;
 }
+
+.flex__stars {
+  display: flex;
+}
+
+.flex__rectangles {
+  display: flex;
+  justify-content: space-between;
+}

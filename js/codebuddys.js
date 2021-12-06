@@ -13,24 +13,22 @@ fetch("https://muc-student-companion-api.vercel.app/api/buddies")
       create(group);
     });
   });
-// Get date label
+
+// TODAYS DATE
 const myDate = document.querySelector(".header__label");
 
-// Get date components
 const d = new Date();
 const date = d.getDate();
 const month = d.getMonth() + 1; // getMonth() returns month from 0-11 not 1-12
 const year = d.getFullYear();
-
-// insert todays date
 myDate.innerText = `Date - ${date}.${month}.${year}`;
 
-// SAVE TO LOCAL STORAGE
+// FUNCTION SAVE TO LOCAL STORAGE
 function saveToLocal(name, data) {
   localStorage.setItem(name, JSON.stringify(data));
 }
 
-// GET FROM LOCAL STORAGE
+// FUNCTION GET FROM LOCAL STORAGE
 function loadFromLocal(name) {
   const itemsFromLocal = localStorage.getItem(name)
     ? JSON.parse(localStorage.getItem(name))
@@ -38,7 +36,7 @@ function loadFromLocal(name) {
   return itemsFromLocal;
 }
 
-// Create function
+// FUNCTION CREATE ELEMENTS WITH CLASS
 function create(group) {
   const main = document.querySelector("main");
   const buddiesList = document.createElement("section");

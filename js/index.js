@@ -1,4 +1,4 @@
-// Structure
+// STRUCTURE FOR DASHBOARD
 const main = document.querySelector("main");
 const buddiesSection = document.createElement("section");
 buddiesSection.classList.add("buddiesList");
@@ -8,12 +8,12 @@ main.appendChild(buddiesSection);
 main.appendChild(teamsSection);
 main.appendChild(journalSection);
 
-// SAVE TO LOCAL STORAGE
+// FUNCTION SAVE TO LOCAL STORAGE
 function saveToLocal(name, data) {
   localStorage.setItem(name, JSON.stringify(data));
 }
 
-// GET FROM LOCAL STORAGE
+// FUNCTION GET FROM LOCAL STORAGE
 function loadFromLocal(name) {
   const itemsFromLocal = localStorage.getItem(name)
     ? JSON.parse(localStorage.getItem(name))
@@ -29,13 +29,14 @@ fetch("https://muc-student-companion-api.vercel.app/api/buddies") // wirft JSON 
     const index = getIndex(buddiesList);
     createBuddy(buddiesList[index]);
   })
+  // FROM LOCAL STORAGE
   .catch(() => {
     const buddiesList = loadFromLocal("Code-Buddies");
     const index = getIndex(buddiesList);
     createBuddy(buddiesList[index]);
   });
 
-// Create function
+// FUCNTION CREATE BUDDIES WITH CLASS
 function createBuddy(group) {
   const section = document.createElement("section");
   buddiesSection.appendChild(section);
@@ -66,7 +67,7 @@ fetch("https://muc-student-companion-api.vercel.app/api/teams")
     createTeam(teamList[index], index);
   });
 
-// Function for index
+// FUNCTION FOR INDEX OF YOUR TEAM
 function getIndex(teamList) {
   let resultIndex;
   teamList.forEach((team, index) => {
@@ -78,7 +79,7 @@ function getIndex(teamList) {
   return resultIndex;
 }
 
-// Function create elements
+// FUNCTION CREATE TEAM WITH CLASS
 function createTeam(team, index) {
   const section = document.createElement("section");
   section.classList.add("teams-list");
@@ -99,17 +100,16 @@ function createTeam(team, index) {
 }
 
 // NEWEST JOURNAL LOG
-
 fetch("https://muc-student-companion-api.vercel.app/api/journals")
   .then((response) => response.json())
   .then((data) => {
     const journalList = data;
 
-    // Create content for youngest
+    // FOR NEWEST JOURNAL ENTRIES
     const section = newElements("section", "main__journal", " ");
     const headline = newElements("h2", "headline", getDate(journalList));
-    importRectangles(journalList[0]);
     importStars(journalList[0]);
+    importRectangles(journalList[0]);
     const motto = newElements("span", "label", "Motto:");
     const mottoContent = newElements(
       "p",
@@ -127,8 +127,8 @@ fetch("https://muc-student-companion-api.vercel.app/api/journals")
     const journalList = loadFromLocal("Journal");
     const section = newElements("section", "main__journal", " ");
     const headline = newElements("h2", "headline", getDate(journalList));
-    importRectangles(journalList[0]);
     importStars(journalList[0]);
+    importRectangles(journalList[0]);
     const motto = newElements("span", "label", "Motto:");
     const mottoContent = newElements(
       "p",
@@ -143,7 +143,7 @@ fetch("https://muc-student-companion-api.vercel.app/api/journals")
     );
   });
 
-// Check date
+// FUNCTION
 function getDate(list) {
   if (!list[0].date) {
     return "Newest journal entry";
@@ -152,55 +152,107 @@ function getDate(list) {
   }
 }
 
-// Element-creator
+// FUNCTION CREATES ELEMENTS WITH CLASS
 function newElements(elementName, elementClass, elementText) {
   const newElement = document.createElement(elementName);
   journalSection.appendChild(newElement);
   newElement.classList.add(elementClass);
   newElement.innerHTML = elementText;
 }
-
-// -> Boxes-LOOP!!!
-function importRectangles(journalNumber) {
-  const comprehension = newElements("span", "label", "Comprehension:");
-  const blockContainer = document.createElement("div");
-  journalSection.appendChild(blockContainer);
-  blockContainer.classList.add("block");
-  for (let i = 0; i < journalNumber.comprehension; i++) {
-    const img = document.createElement("img");
-    blockContainer.appendChild(img);
-    img.style.width = "22px";
-    img.style.margin = "2px";
-    img.setAttribute("src", "./rectangle_active.png");
-  }
-  for (let i = journalNumber.comprehension; i < 10; i++) {
-    const img = document.createElement("img");
-    blockContainer.appendChild(img);
-    img.style.width = "22px";
-    img.style.margin = "2px";
-    img.setAttribute("src", "./rectangle_inactive.png");
-  }
-}
-
-// -> STARS-LOOP!!!
+// FUNCTION IMPORTS SVG -> STARS
 function importStars(journalNumber) {
   const rating = newElements("span", "label", "Rating:");
   const starContainer = document.createElement("div");
   journalSection.appendChild(starContainer);
-  starContainer.classList.add("stars");
+  starContainer.classList.add("flex__stars");
   for (let i = 0; i < journalNumber.rating; i++) {
-    const img = document.createElement("img");
-    starContainer.appendChild(img);
-    img.style.width = "25px";
-    img.style.margin = "2px";
-    img.setAttribute("src", "./star_active.png");
+    const starDiv = document.createElement("div");
+    starContainer.appendChild(starDiv);
+    starDiv.innerHTML = `
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.23458 7.2288L0.825543 8.30177L0.71598 8.32379C0.00767595 8.50741 -0.252463 9.41029 0.291856 9.93924L5.65288 15.1498L4.38762 22.5059L4.37507 22.6116C4.32751 23.3425 5.11049 23.8714 5.78483 23.5179L12.4119 20.0448L19.039 23.5179L19.136 23.5625C19.8185 23.8334 20.565 23.2545 20.4362 22.5059L19.17 15.1498L24.532 9.93924L24.6076 9.85723C25.0724 9.29362 24.7505 8.41074 23.9983 8.30177L16.5883 7.2288L13.2754 0.535137C12.9222 -0.178379 11.9016 -0.178379 11.5484 0.535137L8.23458 7.2288Z"
+                  class="star__active--fix"
+                />
+              </svg>`;
   }
   for (let i = journalNumber.rating; i < 5; i++) {
-    const img = document.createElement("img");
-    starContainer.appendChild(img);
-    img.style.width = "25px";
-    img.style.margin = "2px";
-    img.setAttribute("src", "./star_inactive.png");
+    const starDiv = document.createElement("div");
+    starContainer.appendChild(starDiv);
+    starDiv.innerHTML = `
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.23458 7.2288L0.825543 8.30177L0.71598 8.32379C0.00767595 8.50741 -0.252463 9.41029 0.291856 9.93924L5.65288 15.1498L4.38762 22.5059L4.37507 22.6116C4.32751 23.3425 5.11049 23.8714 5.78483 23.5179L12.4119 20.0448L19.039 23.5179L19.136 23.5625C19.8185 23.8334 20.565 23.2545 20.4362 22.5059L19.17 15.1498L24.532 9.93924L24.6076 9.85723C25.0724 9.29362 24.7505 8.41074 23.9983 8.30177L16.5883 7.2288L13.2754 0.535137C12.9222 -0.178379 11.9016 -0.178379 11.5484 0.535137L8.23458 7.2288Z"
+                  class="star__inactive--fix"
+                />
+              </svg>`;
   }
 }
-// POST for API on Journal Site
+
+// FUNCTION IMPORTS SVG -> RECTANGLES
+function importRectangles(journalNumber) {
+  const comprehension = newElements("span", "label", "Comprehension:");
+  const blockContainer = document.createElement("div");
+  journalSection.appendChild(blockContainer);
+  blockContainer.classList.add("flex__rectangles");
+  for (let i = 0; i < journalNumber.comprehension; i++) {
+    const rectangleDiv = document.createElement("div");
+    blockContainer.appendChild(rectangleDiv);
+    rectangleDiv.innerHTML = `
+          <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            y="22"
+            width="22"
+            height="22"
+            rx="4"
+            transform="rotate(-90 0 22)"
+            class="block__active--fix"
+          />
+        </svg>`;
+  }
+  for (let i = journalNumber.comprehension; i < 10; i++) {
+    const rectangleDiv = document.createElement("div");
+    blockContainer.appendChild(rectangleDiv);
+    rectangleDiv.innerHTML = `
+          <svg
+          width="22"
+          height="22"
+          viewBox="0 0 22 22"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            y="22"
+            width="22"
+            height="22"
+            rx="4"
+            transform="rotate(-90 0 22)"
+            class="block__inactive--fix"
+          />
+        </svg>`;
+  }
+}
